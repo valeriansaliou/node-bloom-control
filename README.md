@@ -95,7 +95,7 @@ bloomControl.close();  // Returns: true if closed, false if already closed
 
 ## What is Bloom?
 
-Wondering what Bloom is? Check out **[valeriansaliou/bloom](https://github.com/valeriansaliou/bloom)**.
+ℹ️ Wondering what Bloom is? Check out **[valeriansaliou/bloom](https://github.com/valeriansaliou/bloom)**.
 
 ## How is it linked to Bloom?
 
