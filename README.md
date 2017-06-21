@@ -6,7 +6,7 @@ Bloom Control integration for Node. Used in pair with Bloom, the HTTP REST API c
 
 Bloom Control lets you control your Bloom cache, from your NodeJS code. Purge API cache on-demand, whenever your API worker updates a database model or performs some action that require cached data to be invalidated.
 
-**Wondering what Bloom is? Check out [https://github.com/valeriansaliou/bloom](valeriansaliou/bloom).**
+**Wondering what Bloom is? Check out [valeriansaliou/bloom](https://github.com/valeriansaliou/bloom).**
 
 ## Who uses it?
 
