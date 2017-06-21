@@ -51,11 +51,11 @@ Use the same `bloomControl` instance to purge cache collections:
 
 ```javascript
 // Purge cache for a given bucket (all authenticated users)
-bloomControl.purge.bucket(`cache_bucket_id`)
+bloomControl.purge.bucket(`cache_bucket_id`)  // Returns: true if executed immediately, false if deferred (ie. TCP socket disconnected)
 
 // Purge all cache for an authenticated user
 // Notice: identifier and token can usually be found in your Basic Auth headers
-bloomControl.purge.user(`user_identifier`, `user_token`)
+bloomControl.purge.user(`user_identifier`, `user_token`)  // Returns: true if executed immediately, false if deferred (ie. TCP socket disconnected)
 ```
 
 ### 3. Teardown bloom
