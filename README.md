@@ -76,4 +76,4 @@ Wondering what Bloom is? Check out **[valeriansaliou/bloom](https://github.com/v
 
 `node-bloom-control` maintains a persistent TCP connection to the Bloom Control interface that's listening on your running Bloom instance. In case `node-bloom-control` gets disconnected from Bloom, it will retry to connect once the connection is established again. Pending cache purge requests that could not be transmitted to Bloom are stacked, up to a certain limit where further cache purge requests will be dropped and not stacked. Once the connection to Bloom Control is established again, stacked cache purge requests are transmitted to Bloom for processing.
 
-You can configure the connection details of your Bloom instance when initializing `node-bloom-control` from your code, eg. the Bloom host and port, or UNIX socket.
+You can configure the connection details of your Bloom instance when initializing `node-bloom-control` from your code; via the Bloom host and port, or UNIX socket.
