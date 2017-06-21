@@ -1,7 +1,7 @@
 {
   "name": "bloom-control",
   "description": "Bloom Control integration for Node. Used in pair with Bloom, the HTTP REST API caching middleware.",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "homepage": "https://github.com/valeriansaliou/node-bloom-control",
   "license": "MIT",
 
