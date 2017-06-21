@@ -31,7 +31,7 @@ Alternatively, you can run `npm install bloom-control --save`.
 
 `node-bloom-control` can be instanciated as such:
 
-**➡️ Your Bloom instance is listening on TCP host + port:**
+**➡️ Your Bloom instance is listening on a TCP socket:**
 
 ```javascript
 var BloomControl = require("bloom-control").BloomControl;
