@@ -50,12 +50,26 @@ var bloomControl = new BloomControl({
 Use the same `bloomControl` instance to purge cache collections:
 
 ```javascript
+// Notice: all methods return 'true' if executed immediately, 'false' if deferred (ie. TCP socket disconnected)
+
 // Purge cache for a given bucket (all authenticated users)
-bloomControl.purge.bucket(`cache_bucket_id`)  // Returns: true if executed immediately, false if deferred (ie. TCP socket disconnected)
+bloomControl.purge.bucket(`cache_bucket_id`)
+
+// Purge cache for a multiple buckets at once (all authenticated users)
+bloomControl.purge.bucket([
+  `cache_bucket_id_1`,
+  `cache_bucket_id_2`
+])
 
 // Purge all cache for an authenticated user
 // Notice: identifier and token can usually be found in your Basic Auth headers
-bloomControl.purge.user(`user_identifier`, `user_token`)  // Returns: true if executed immediately, false if deferred (ie. TCP socket disconnected)
+bloomControl.purge.user(`user_identifier`, `user_token`)
+
+// Purge all cache for multiple authenticated users at once
+bloomControl.purge.user([
+  [`user_identifier`, `user_token`],
+  [`user_identifier`, `user_token`]
+])
 ```
 
 ### 3. Teardown connection
@@ -65,7 +79,7 @@ If you need to teardown an ongoing connection to Bloom, use:
 ```javascript
 bloomControl.close();  // Returns: true if closed, false if already closed
 
-// Note: cache purge calls will now throw an error as the connection is now closed.
+// Notice: cache purge calls will now throw an error as the connection is now closed.
 ```
 
 ## What is Bloom?
