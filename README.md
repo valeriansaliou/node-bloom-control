@@ -58,12 +58,12 @@ bloomControl.purge.bucket(`cache_bucket_id`)  // Returns: true if executed immed
 bloomControl.purge.user(`user_identifier`, `user_token`)  // Returns: true if executed immediately, false if deferred (ie. TCP socket disconnected)
 ```
 
-### 3. Teardown bloom
+### 3. Teardown connection
 
 If you need to teardown an ongoing connection to Bloom, use:
 
 ```javascript
-bloomControl.close();
+bloomControl.close();  // Returns: true if closed, false if already closed
 
 // Note: cache purge calls will now throw an error as the connection is now closed.
 ```
