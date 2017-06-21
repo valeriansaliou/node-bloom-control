@@ -35,8 +35,10 @@ Alternatively, you can run `npm install bloom-control --save`.
 var BloomControl = require("bloom-control").BloomControl;
 
 var bloomControl = new BloomControl({
-  host : "::1",  // Or '127.0.0.1' if you are still using IPv4
-  port : 811     // Default port is '811'
+  host  : "::1",  // Or '127.0.0.1' if you are still using IPv4
+  port  : 811,    // Default port is '811'
+  shard : 0,      // Specify the Bloom shard to use
+                  // A Bloom instance can host multiple cache shards, eg. for different API workers
 
   // If Bloom is listening on an UNIX socket
   // socket : "/tmp/bloom.sock"
