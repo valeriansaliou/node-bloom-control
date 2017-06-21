@@ -61,7 +61,7 @@ bloomControl.purge.bucket([
   `cache_bucket_id_2`
 ])
 
-// Purge all cache for an authenticated user
+// Purge all cache for a given authenticated user
 // Notice: identifier and token can usually be found in your Basic Auth headers
 bloomControl.purge.user(`user_identifier`, `user_token`)
 
