@@ -39,8 +39,8 @@ var BloomControl = require("bloom-control").BloomControl;
 var bloomControl = new BloomControl({
   host  : "::1",  // Or '127.0.0.1' if you are still using IPv4
   port  : 811,    // Default port is '811'
-  shard : 0       // Specify the Bloom shard to use
-                  // A Bloom instance can host multiple cache shards, eg. for different API workers
+  shard : 0       // Specify the Bloom shard to use \
+                  //   a Bloom instance can host multiple cache shards, eg. for different API workers
 });
 ```
 
@@ -51,8 +51,8 @@ var BloomControl = require("bloom-control").BloomControl;
 
 var bloomControl = new BloomControl({
   socket : "/tmp/bloom.sock",  // Path to local UNIX socket (NodeJS user must have permission to write + read socket file)
-  shard  : 0                   // Specify the Bloom shard to use
-                               // A Bloom instance can host multiple cache shards, eg. for different API workers
+  shard  : 0                   // Specify the Bloom shard to use \
+                               //   a Bloom instance can host multiple cache shards, eg. for different API workers
 });
 ```
 
