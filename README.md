@@ -10,7 +10,7 @@ Bloom Control lets you control your Bloom cache, from your NodeJS code. Purge AP
 
 <table>
 <tr>
-<td align="center"><a href="https://crisp.im/"><img src="https://valeriansaliou.github.io/node-bloom-control/images/crisp.png" height="64" /></a></td>
+<td align="center"><a href="https://crisp.chat/"><img src="https://valeriansaliou.github.io/node-bloom-control/images/crisp.png" height="64" /></a></td>
 </tr>
 <tr>
 <td align="center">Crisp</td>
