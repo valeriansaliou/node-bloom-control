@@ -64,12 +64,12 @@ Use the same `bloomControl` instance to purge cache collections:
 // Notice: all methods return 'true' if executed immediately, 'false' if deferred (ie. TCP socket disconnected)
 
 // Purge cache for a given bucket (all authenticated users)
-bloomControl.purge.bucket(`cache_bucket_id`, function(error) {
+bloomControl.purgeBucket(`cache_bucket_id`, function(error) {
   // Handle purge acknowledgement from Bloom
 });
 
 // Purge cache for a multiple buckets at once (all authenticated users)
-bloomControl.purge.bucket([
+bloomControl.purgeBucket([
   `cache_bucket_id_1`,
   `cache_bucket_id_2`
 ], function(error) {
@@ -78,12 +78,12 @@ bloomControl.purge.bucket([
 
 // Purge all cache for a given authenticated user
 // Notice: identifier and token can usually be found in your Basic Auth headers
-bloomControl.purge.user(`user_identifier`, `user_token`, function(error) {
+bloomControl.purgeUser(`user_identifier`, `user_token`, function(error) {
   // Handle purge acknowledgement from Bloom
 });
 
 // Purge all cache for multiple authenticated users at once
-bloomControl.purge.user([
+bloomControl.purgeUser([
   [`user_identifier`, `user_token`],
   [`user_identifier`, `user_token`]
 ], function(error) {
