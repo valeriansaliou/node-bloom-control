@@ -41,7 +41,17 @@ var bloomControl = new BloomControl({
   port  : 811,    // Default port is '811'
   shard : 0       // Specify the Bloom shard to use, as \
                   //   a Bloom instance can host multiple cache shards, eg. for different API workers
-});
+}).connect(
+  function() {
+    // Success handler
+    console.info("Bloom Control succeeded to connect to host.");
+  },
+
+  function(error) {
+    // Failure handler
+    console.error("Bloom Control failed to connect to host.", error);
+  }
+);
 ```
 
 **➡️ Your Bloom instance is listening on an UNIX socket:**
@@ -53,7 +63,17 @@ var bloomControl = new BloomControl({
   socket : "/tmp/bloom.sock",  // Path to local UNIX socket (NodeJS user must have permission to write + read socket file)
   shard  : 0                   // Specify the Bloom shard to use, as \
                                //   a Bloom instance can host multiple cache shards, eg. for different API workers
-});
+}).connect(
+  function() {
+    // Success handler
+    console.info("Bloom Control succeeded to connect to socket.");
+  },
+
+  function(error) {
+    // Failure handler
+    console.error("Bloom Control failed to connect to socket.", error);
+  }
+);
 ```
 
 ### 2. Purge cache collections
