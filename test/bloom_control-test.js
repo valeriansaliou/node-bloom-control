@@ -146,21 +146,26 @@ describe("node-bloom-control", function() {
     });
   });
 
-  describe("purgeUser method", function() {
-    it("should defer purgeUser on userIdentifier when offline", function() {
+  describe("purgeAuth method", function() {
+    it("should defer purgeAuth on authIdentifier when offline", function() {
       var bloomControl = new BloomControl({
         shard  : 0,
         socket : "/var/run/bloom.sock"
       });
 
       assert.ok(
-        !(bloomControl.purgeUser("user_id_1")),
-        "User purge should be deferred for 'user_id_1'"
+        !(bloomControl.purgeAuth("auth_id_1", "auth_tk_1")),
+        "Auth purge should be deferred for ('auth_id_1'; 'auth_tk_1')"
       );
 
       assert.ok(
-        !(bloomControl.purgeUser(["user_id_2", "user_id_3"])),
-        "User purge should be deferred for 'user_id_2' + 'user_id_3'"
+        !(bloomControl.purgeAuth([
+          ["auth_id_2", "auth_tk_2"],
+          ["auth_id_3", "auth_tk_3"]
+        ])),
+
+        ("Auth purge should be deferred for ('auth_id_2'; 'auth_tk_2') + " +
+            "('auth_id_3'; 'auth_tk_3')")
       );
     });
   });
