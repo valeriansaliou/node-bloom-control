@@ -85,7 +85,7 @@ Use the same `bloomControl` instance to purge cache collections:
 
 // Purge cache for a given bucket (all authenticated users)
 bloomControl.purgeBucket(`cache_bucket_id`, function(error) {
-  // Handle purge acknowledgement from Bloom
+  // Handle purge errors here
 });
 
 // Purge cache for a multiple buckets at once (all authenticated users)
@@ -93,21 +93,21 @@ bloomControl.purgeBucket([
   `cache_bucket_id_1`,
   `cache_bucket_id_2`
 ], function(error) {
-  // Handle purge acknowledgement from Bloom
+  // Handle purge errors here
 });
 
 // Purge all cache for a given authenticated user
 // Notice: identifier and token can usually be found in your Basic Auth headers
-bloomControl.purgeUser(`user_identifier`, `user_token`, function(error) {
-  // Handle purge acknowledgement from Bloom
+bloomControl.purgeAuth(`auth_identifier`, `auth_token`, function(error) {
+  // Handle purge errors here
 });
 
 // Purge all cache for multiple authenticated users at once
-bloomControl.purgeUser([
-  [`user_identifier`, `user_token`],
-  [`user_identifier`, `user_token`]
+bloomControl.purgeAuth([
+  [`auth_identifier_1`, `auth_token_1`],
+  [`auth_identifier_2`, `auth_token_2`]
 ], function(error) {
-  // Handle purge acknowledgement from Bloom
+  // Handle purge errors here
 });
 ```
 
@@ -117,11 +117,9 @@ If you need to teardown an ongoing connection to Bloom, use:
 
 ```javascript
 // Returns: true if proceeding close, false if already closed
-bloomControl.close(function() {
-  // Handle close acknowledgement from Bloom
+bloomControl.close(function(error) {
+  // Handle close errors here
 });
-
-// Notice: cache purge calls will now throw an error as the connection is now closed.
 ```
 
 ## What is Bloom?
