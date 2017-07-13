@@ -15,7 +15,7 @@ var assert = require("assert");
 
 describe("node-bloom-control", function() {
   describe("constructor", function() {
-    it("should succeed creating a limiter with valid options", function() {
+    it("should succeed creating an instance with valid options", function() {
       assert.doesNotThrow(
         function() {
           new BloomControl({
@@ -30,7 +30,7 @@ describe("node-bloom-control", function() {
       );
     });
 
-    it("should fail creating a limiter with missing shard", function() {
+    it("should fail creating an instance with missing shard", function() {
       assert.throws(
         function() {
           new BloomControl({
@@ -43,7 +43,7 @@ describe("node-bloom-control", function() {
       );
     });
 
-    it("should fail creating a limiter with invalid shard", function() {
+    it("should fail creating an instance with invalid shard", function() {
       assert.throws(
         function() {
           new BloomControl({
@@ -57,7 +57,7 @@ describe("node-bloom-control", function() {
       );
     });
 
-    it("should fail creating a limiter with missing host", function() {
+    it("should fail creating an instance with missing host", function() {
       assert.throws(
         function() {
           new BloomControl({
@@ -70,7 +70,7 @@ describe("node-bloom-control", function() {
       );
     });
 
-    it("should fail creating a limiter with missing port", function() {
+    it("should fail creating an instance with missing port", function() {
       assert.throws(
         function() {
           new BloomControl({
@@ -83,7 +83,7 @@ describe("node-bloom-control", function() {
       );
     });
 
-    it("should fail creating a limiter with invalid port", function() {
+    it("should fail creating an instance with invalid port", function() {
       assert.throws(
         function() {
           new BloomControl({
@@ -97,19 +97,7 @@ describe("node-bloom-control", function() {
       );
     });
 
-    it("should fail creating a limiter with missing socket", function() {
-      assert.throws(
-        function() {
-          new BloomControl({
-            shard : 7
-          });
-        },
-
-        "BloomControl should throw on missing socket"
-      );
-    });
-
-    it("should fail creating a limiter with invalid offlineStackMaxSize",
+    it("should fail creating an instance with invalid offlineStackMaxSize",
       function() {
         assert.throws(
           function() {
@@ -131,7 +119,8 @@ describe("node-bloom-control", function() {
     it("should defer purgeBucket on cacheBucketID when offline", function() {
       var bloomControl = new BloomControl({
         shard  : 0,
-        socket : "/var/run/bloom.sock"
+        host   : "::1",
+        port   : 811
       });
 
       assert.ok(
@@ -150,7 +139,8 @@ describe("node-bloom-control", function() {
     it("should defer purgeAuth on authIdentifier when offline", function() {
       var bloomControl = new BloomControl({
         shard  : 0,
-        socket : "/var/run/bloom.sock"
+        host   : "::1",
+        port   : 811
       });
 
       assert.ok(
@@ -174,7 +164,8 @@ describe("node-bloom-control", function() {
     it("should not close twice already closed channel", function() {
       var bloomControl = new BloomControl({
         shard  : 0,
-        socket : "/var/run/bloom.sock"
+        host   : "::1",
+        port   : 811
       });
 
       assert.ok(

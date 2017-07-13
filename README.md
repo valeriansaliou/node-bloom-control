@@ -31,8 +31,6 @@ Alternatively, you can run `npm install bloom-control --save`.
 
 `node-bloom-control` can be instanciated as such:
 
-**➡️ Your Bloom instance is listening on a TCP socket:**
-
 ```javascript
 var BloomControl = require("bloom-control").BloomControl;
 
@@ -50,28 +48,6 @@ var bloomControl = new BloomControl({
   function(error) {
     // Failure handler
     console.error("Bloom Control failed to connect to host.", error);
-  }
-);
-```
-
-**➡️ Your Bloom instance is listening on an UNIX socket:**
-
-```javascript
-var BloomControl = require("bloom-control").BloomControl;
-
-var bloomControl = new BloomControl({
-  socket : "/tmp/bloom.sock",  // Path to local UNIX socket (NodeJS user must have permission to write + read socket file)
-  shard  : 0                   // Specify the Bloom shard to use, as \
-                               //   a Bloom instance can host multiple cache shards, eg. for different API workers
-}).connect(
-  function() {
-    // Success handler
-    console.info("Bloom Control succeeded to connect to socket.");
-  },
-
-  function(error) {
-    // Failure handler
-    console.error("Bloom Control failed to connect to socket.", error);
   }
 );
 ```
@@ -130,4 +106,4 @@ bloomControl.close(function(error) {
 
 `node-bloom-control` maintains a persistent TCP connection to the Bloom Control interface that's listening on your running Bloom instance. In case `node-bloom-control` gets disconnected from Bloom, it will retry to connect once the connection is established again. Pending cache purge requests that could not be transmitted to Bloom are stacked, up to a certain limit where further cache purge requests will be dropped and not stacked. Once the connection to Bloom Control is established again, stacked cache purge requests are transmitted to Bloom for processing.
 
-You can configure the connection details of your Bloom instance when initializing `node-bloom-control` from your code; via the Bloom host and port, or UNIX socket.
+You can configure the connection details of your Bloom instance when initializing `node-bloom-control` from your code; via the Bloom host and port.
