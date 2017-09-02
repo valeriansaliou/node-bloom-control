@@ -36,7 +36,7 @@ var BloomControl = require("bloom-control").BloomControl;
 
 var bloomControl = new BloomControl({
   host  : "::1",  // Or '127.0.0.1' if you are still using IPv4
-  port  : 811,    // Default port is '811'
+  port  : 8811,   // Default port is '8811'
   shard : 0       // Specify the Bloom shard to use, as \
                   //   a Bloom instance can host multiple cache shards, eg. for different API workers
 }).connect(

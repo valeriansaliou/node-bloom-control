@@ -21,7 +21,7 @@ describe("node-bloom-control", function() {
           new BloomControl({
             shard               : 7,
             host                : "::1",
-            port                : 811,
+            port                : 8811,
             offlineStackMaxSize : 0
           });
         },
@@ -35,7 +35,7 @@ describe("node-bloom-control", function() {
         function() {
           new BloomControl({
             host  : "::1",
-            port  : 811
+            port  : 8811
           });
         },
 
@@ -49,7 +49,7 @@ describe("node-bloom-control", function() {
           new BloomControl({
             shard : 256,
             host  : "::1",
-            port  : 811
+            port  : 8811
           });
         },
 
@@ -62,7 +62,7 @@ describe("node-bloom-control", function() {
         function() {
           new BloomControl({
             shard : 7,
-            port  : 811
+            port  : 8811
           });
         },
 
@@ -104,7 +104,7 @@ describe("node-bloom-control", function() {
             new BloomControl({
               shard               : 7,
               host                : "::1",
-              port                : 811,
+              port                : 8811,
               offlineStackMaxSize : "20"
             });
           },
@@ -120,7 +120,7 @@ describe("node-bloom-control", function() {
       var bloomControl = new BloomControl({
         shard  : 0,
         host   : "::1",
-        port   : 811
+        port   : 8811
       });
 
       assert.ok(
@@ -140,7 +140,7 @@ describe("node-bloom-control", function() {
       var bloomControl = new BloomControl({
         shard  : 0,
         host   : "::1",
-        port   : 811
+        port   : 8811
       });
 
       assert.ok(
@@ -165,7 +165,7 @@ describe("node-bloom-control", function() {
       var bloomControl = new BloomControl({
         shard  : 0,
         host   : "::1",
-        port   : 811
+        port   : 8811
       });
 
       assert.ok(

@@ -14,7 +14,7 @@ var BloomControl = require("../").BloomControl;
 
 var bloomControl = new BloomControl({
   host  : "::1",
-  port  : 10811,
+  port  : 8811,
   shard : 0
 }).connect(
   function() {
