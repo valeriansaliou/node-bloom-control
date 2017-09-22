@@ -87,7 +87,38 @@ bloomControl.purgeAuth([
 });
 ```
 
-### 3. Teardown connection
+### 3. Listen for processed commands
+
+In the event you need to debug the commands being executed (given the result, either `NIL`, `OK` or `ERR`), you can register a listener as:
+
+```javascript
+// Listen for OK commands (ie. executed commands)
+bloomControl.on("OK", function(command) {
+  console.log("Command OK:", command);
+});
+
+// Listen for ERR commands (ie. failed commands)
+bloomControl.on("ERR", function(command) {
+  console.log("Command ERR:", command);
+});
+
+// Listen for NIL commands (ie. unknown commands, you won't need this)
+bloomControl.on("NIL", function(command) {
+  console.log("Command NIL:", command);
+});
+```
+
+You can stop listening to events as such:
+
+```javascript
+bloomControl.off("OK");
+bloomControl.off("ERR");
+bloomControl.off("NIL");
+```
+
+**Notice: only 1 handler can be registered at the same time for a given command result.**
+
+### 4. Teardown connection
 
 If you need to teardown an ongoing connection to Bloom, use:
 
