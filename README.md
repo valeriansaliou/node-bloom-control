@@ -39,17 +39,27 @@ var bloomControl = new BloomControl({
   port  : 8811,   // Default port is '8811'
   shard : 0       // Specify the Bloom shard to use, as \
                   //   a Bloom instance can host multiple cache shards, eg. for different API workers
-}).connect(
-  function() {
-    // Success handler
+}).connect({
+  connected : function() {
+    // Connected handler
     console.info("Bloom Control succeeded to connect to host.");
   },
 
-  function(error) {
+  disconnected : function() {
+    // Disconnected handler
+    console.error("Bloom Control is now disconnected.");
+  },
+
+  timeout : function() {
+    // Timeout handler
+    console.error("Bloom Control connection timed out.");
+  },
+
+  error : function(error) {
     // Failure handler
     console.error("Bloom Control failed to connect to host.", error);
   }
-);
+});
 ```
 
 ### 2. Purge cache collections
