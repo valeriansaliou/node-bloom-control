@@ -5,3 +5,4 @@ examples/
 .jscsrc
 .checkbuild
 .travis.yml
+package-lock.json
