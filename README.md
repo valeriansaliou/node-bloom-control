@@ -55,6 +55,11 @@ var bloomControl = new BloomControl({
     console.error("Bloom Control connection timed out.");
   },
 
+  retrying : function() {
+    // Retry handler
+    console.error("Trying to reconnect to Bloom Control...");
+  },
+
   error : function(error) {
     // Failure handler
     console.error("Bloom Control failed to connect to host.", error);
