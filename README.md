@@ -104,7 +104,7 @@ bloomControl.purgeAuth([
 
 ### 3. Listen for processed commands
 
-In the event you need to debug the commands being executed (given the result, either `NIL`, `OK` or `ERR`), you can register a listener as:
+In the event you need to debug the commands being executed (given the result, either `NIL`, `OK`, `ERR` or `PONG`), you can register a listener as:
 
 ```javascript
 // Listen for OK commands (ie. executed commands)
@@ -121,6 +121,11 @@ bloomControl.on("ERR", function(command) {
 bloomControl.on("NIL", function(command) {
   console.log("Command NIL:", command);
 });
+
+// Listen for PONG commands (ie. replies to pings)
+bloomControl.on("PONG", function(command) {
+  console.log("Command PONG:", command);
+});
 ```
 
 You can stop listening to events as such:
@@ -129,11 +134,26 @@ You can stop listening to events as such:
 bloomControl.off("OK");
 bloomControl.off("ERR");
 bloomControl.off("NIL");
+bloomControl.off("PONG");
 ```
 
 **Notice: only 1 handler can be registered at the same time for a given command result.**
 
-### 4. Teardown connection
+### 4. Test connection
+
+You can test your connection to Bloom anytime by sending a ping:
+
+```javascript
+bloomControl.ping(function(error) {
+  // Handle ping errors here
+});
+```
+
+The response to your ping will come on the event channel (register a listener for the `PONG` event).
+
+**Notice: pings are automatically sent to maintain the connection. You will get pong events periodically on the event channel, even if you never sent a ping.**
+
+### 5. Teardown connection
 
 If you need to teardown an ongoing connection to Bloom, use:
 
