@@ -6,6 +6,8 @@
 
 Bloom Control lets you control your Bloom cache, from your NodeJS code. Purge API cache on-demand, whenever your API worker updates a database model or performs some action that require cached data to be invalidated.
 
+**🇫🇷 Crafted in Brest, France.**
+
 ## Who uses it?
 
 <table>
