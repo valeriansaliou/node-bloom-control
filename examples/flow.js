@@ -65,34 +65,6 @@ var bloomControl = new BloomControl({
         console.info("Sent: purgeBucketAfterClose", purgeBucketAfterClose);
 
         console.info("Hold on...");
-
-        setTimeout(function() {
-          console.info("Reconnecting...");
-
-          // Reconnect
-          bloomControl.connect(
-            function() {
-              console.info("Reconnected.");
-
-              console.info("Hold on...");
-
-              setTimeout(function() {
-                console.info("Disconnecting...");
-
-                bloomControl.close(function() {
-                  console.info("Disconnected...");
-                  console.info("Done running flow.");
-
-                  process.exit(0);
-                });
-              }, 1000);
-            },
-
-            function(error_reco) {
-              console.error("Failed reconnecting.", error_reco);
-            }
-          );
-        }, 1000);
       }, 4000);
     }, 500);
   },
@@ -100,6 +72,9 @@ var bloomControl = new BloomControl({
   disconnected : function() {
     // Disconnected handler
     console.error("Bloom Control is now disconnected.");
+    console.info("Done running flow.");
+
+    process.exit(0);
   },
 
   timeout : function() {
