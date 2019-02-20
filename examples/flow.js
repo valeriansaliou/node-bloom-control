@@ -16,10 +16,10 @@ var bloomControl = new BloomControl({
   host  : "::1",
   port  : 8811,
   shard : 0
-}).connect(
-  function() {
-    // Success handler
-    console.info("Bloom Control succeeded to connect to socket.");
+}).connect({
+  connected : function() {
+    // Connected handler
+    console.info("Bloom Control succeeded to connect to host.");
     console.info("Running flow...");
 
     setTimeout(function() {
@@ -97,10 +97,25 @@ var bloomControl = new BloomControl({
     }, 500);
   },
 
-  function(error) {
+  disconnected : function() {
+    // Disconnected handler
+    console.error("Bloom Control is now disconnected.");
+  },
+
+  timeout : function() {
+    // Timeout handler
+    console.error("Bloom Control connection timed out.");
+  },
+
+  retrying : function() {
+    // Retry handler
+    console.error("Trying to reconnect to Bloom Control...");
+  },
+
+  error : function(error) {
     // Failure handler
-    console.error("Bloom Control failed to connect to socket.", error);
+    console.error("Bloom Control failed to connect to host.", error);
   }
-);
+});
 
 process.stdin.resume();
