@@ -1,6 +1,7 @@
 test/
 coverage/
 examples/
+.github/
 .jshintrc
 .jscsrc
 .checkbuild
