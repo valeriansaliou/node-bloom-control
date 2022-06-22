@@ -69,7 +69,7 @@ Changelog
 
 ### Changes
 
-* Move project CI/CD from Travis to GH Actions [[@valeriansaliou](https://github.com/valeriansaliou)].
+* Move project CI/CD from Travis to GitHub Actions [[@valeriansaliou](https://github.com/valeriansaliou)].
 * Removed Coveralls coverage analysis [[@valeriansaliou](https://github.com/valeriansaliou)].
 
 ## 1.2.0 (2019-02-15)
