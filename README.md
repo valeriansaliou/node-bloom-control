@@ -1,6 +1,6 @@
 # node-bloom-control
 
-[![Test and Build](https://github.com/valeriansaliou/node-bloom-control/workflows/Test%20and%20Build/badge.svg?branch=master)](https://github.com/valeriansaliou/node-bloom-control/actions?query=workflow%3A%22Test+and+Build%22) [![NPM](https://img.shields.io/npm/v/bloom-control.svg)](https://www.npmjs.com/package/bloom-control) [![Downloads](https://img.shields.io/npm/dt/bloom-control.svg)](https://www.npmjs.com/package/bloom-control) [![Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://www.buymeacoffee.com/valeriansaliou)
+[![Test and Build](https://github.com/valeriansaliou/node-bloom-control/workflows/Test%20and%20Build/badge.svg?branch=master)](https://github.com/valeriansaliou/node-bloom-control/actions?query=workflow%3A%22Test+and+Build%22) [![Build and Release](https://github.com/valeriansaliou/node-bloom-control/workflows/Build%20and%20Release/badge.svg)](https://github.com/valeriansaliou/node-bloom-control/actions?query=workflow%3A%22Build+and+Release%22) [![NPM](https://img.shields.io/npm/v/bloom-control.svg)](https://www.npmjs.com/package/bloom-control) [![Downloads](https://img.shields.io/npm/dt/bloom-control.svg)](https://www.npmjs.com/package/bloom-control) [![Buy Me A Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://www.buymeacoffee.com/valeriansaliou)
 
 **Bloom Control integration for Node. Used in pair with Bloom, the HTTP REST API caching middleware.**
 
