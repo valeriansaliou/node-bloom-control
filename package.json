@@ -30,7 +30,7 @@
     "test": "check-build && istanbul cover _mocha"
   },
   "dependencies": {
-    "farmhash": "3.2.1"
+    "farmhash": "3.3.0"
   },
   "devDependencies": {
     "check-build": "2.8.2",
