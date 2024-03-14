@@ -30,13 +30,13 @@
     "test": "check-build && istanbul cover _mocha"
   },
   "dependencies": {
-    "farmhash": "3.3.0"
+    "farmhash-modern": "1.1.0"
   },
   "devDependencies": {
     "check-build": "2.8.2",
+    "istanbul": "0.4.5",
     "mocha": "3.5.0",
-    "mocha-lcov-reporter": "1.3.0",
-    "istanbul": "0.4.5"
+    "mocha-lcov-reporter": "1.3.0"
   },
   "keywords": [
     "bloom",
