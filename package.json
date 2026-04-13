@@ -28,7 +28,7 @@
   ],
   "main": "lib/bloom_control",
   "engines": {
-    "node": ">= 12.0.0"
+    "node": ">= 20.0.0"
   },
   "scripts": {
     "test": "check-build && istanbul cover _mocha"
