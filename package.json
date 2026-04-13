@@ -4,6 +4,10 @@
   "version": "1.3.9",
   "homepage": "https://github.com/valeriansaliou/node-bloom-control",
   "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./lib/bloom_control.js"
+  },
   "author": {
     "name": "Valerian Saliou",
     "email": "valerian@valeriansaliou.name",
@@ -24,13 +28,13 @@
   ],
   "main": "lib/bloom_control",
   "engines": {
-    "node": ">= 10.0.0"
+    "node": ">= 12.0.0"
   },
   "scripts": {
     "test": "check-build && istanbul cover _mocha"
   },
   "dependencies": {
-    "farmhash": "3.2.1"
+    "farmhashjs": "1.0.1"
   },
   "devDependencies": {
     "check-build": "2.8.2",

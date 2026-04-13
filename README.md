@@ -34,7 +34,7 @@ Alternatively, you can run `npm install bloom-control --save`.
 `node-bloom-control` can be instanciated as such:
 
 ```javascript
-var BloomControl = require("bloom-control").BloomControl;
+import { BloomControl } from "bloom-control";
 
 var bloomControl = new BloomControl({
   host  : "::1",  // Or '127.0.0.1' if you are still using IPv4

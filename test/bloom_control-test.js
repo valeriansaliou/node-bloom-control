@@ -9,8 +9,8 @@
 "use strict";
 
 
-var BloomControl = require("../").BloomControl;
-var assert = require("assert");
+import assert from "assert";
+import { BloomControl } from "../lib/bloom_control.js";
 
 
 describe("node-bloom-control", function() {

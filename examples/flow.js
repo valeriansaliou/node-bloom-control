@@ -9,7 +9,7 @@
 "use strict";
 
 
-var BloomControl = require("../").BloomControl;
+import { BloomControl } from "../lib/bloom_control.js";
 
 
 var bloomControl = new BloomControl({
