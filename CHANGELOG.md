@@ -1,6 +1,18 @@
 Changelog
 =========
 
+## 2.0.0 (2026-04-13)
+
+### Breaking Changes
+
+* ⚠️ Deprecate CommonJS support [[@valeriansaliou](https://github.com/valeriansaliou)].
+* ⚠️ Drop support for NodeJS below version `20` [[@valeriansaliou](https://github.com/valeriansaliou)].
+
+### Changes
+
+* Migrate to ESM module [[@valeriansaliou](https://github.com/valeriansaliou)].
+* Replace `farmhash` dependency with `farmhashjs` (more portable and lighter) [[@valeriansaliou](https://github.com/valeriansaliou)].
+
 ## 1.3.9 (2023-01-09)
 
 ### New Features
